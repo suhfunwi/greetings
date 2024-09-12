@@ -9,7 +9,14 @@ def camelcase(sentence):
 #     So this still works on empty strings, strings of length 1
     return upper_camel_cased[0:1].lower() + upper_camel_cased[1:]
 
+
+def banner():
+    """Display program name"""
+    message = 'Awesome camelcase program!'
+    stars = '*' * len(message)
+    print(f'\n{stars} \n{message} \n{stars}\n')
 def main():
+    banner()
     sentence = input('Enter your sentence: ')
     output = camelcase(sentence)
     print(output)
