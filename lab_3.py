@@ -1,9 +1,19 @@
-name = input('What is your name?')
-birth_month = input('What is your birth month?')
-name_length = len(name)
-print(f'Hello, {name}!')
-print(f'There are {len(name)} letters in your name')
-# can put simple expressions in format strings
-# They are your friend
-if birth_month.lower() == 'august':
-    print('Happy birthday month!')
+def camelcase(sentence):
+    # Convert sentence to camelCase
+    title_case = sentence.title()
+#     Uppercase letter of each word
+    upper_camel_cased = title_case.replace(' ', '')
+#     removes spaces
+#     Lowercase first letter, join with rest of string
+#     Slices don't produce index out of bounds errors
+#     So this still works on empty strings, strings of length 1
+    return upper_camel_cased[0:1].lower() + upper_camel_cased[1:]
+
+def main():
+    sentence = input('Enter your sentence: ')
+    output = camelcase(sentence)
+    print(output)
+
+if __name__ == '__main__':
+    main()
+
